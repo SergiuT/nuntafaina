@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .heart { fill: #8e6f64; }
+      .ring { fill: none; stroke: #8e6f64; stroke-width: 3; }
+    </style>
+  </defs>
+  <!-- Heart icon with rings -->
+  <circle class="ring" cx="30" cy="50" r="15"/>
+  <circle class="ring" cx="70" cy="50" r="15"/>
+  <path class="heart" d="M50,70 C45,65 35,55 35,45 C35,40 38,37 42,37 C44,37 46,38 47,39 C48,38 50,37 52,37 C56,37 59,40 59,45 C59,55 49,65 44,70 C47,68 50,70 50,70 Z"/>
+</svg>
+
