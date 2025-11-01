@@ -1153,6 +1153,10 @@ h1, h2, h3, h4, h5, h6 {
         margin: var(--spacing-md) auto;
     }
 
+    .form-card {
+        min-width: 100%;
+    }
+
     .timeline {
         padding: 0;
     }
