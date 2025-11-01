@@ -743,16 +743,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background-color: #CDB4DB;
+    background-color:rgb(166, 110, 198);
     color: white;
     font-family: 'Roboto', sans-serif;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: #d1415e;
+    background-color: rgb(148, 105, 172);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(228, 95, 116, 0.4);
+    box-shadow: 0 4px 12px rgba(231, 199, 250, 0.8);
 }
 
 .btn-primary:active {
