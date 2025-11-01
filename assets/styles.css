@@ -44,33 +44,22 @@ html {
     width: 100%;
     background: transparent;
     z-index: 100;
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-md);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: var(--spacing-xl);
     align-items: center;
-}
-
-.header-logo {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-    filter: invert(1) brightness(1.2);
-}
-
-.header-nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: var(--spacing-lg);
 }
 
 .nav-link {
-    font-family: 'Playball', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.25rem;
-    color: white;
+    text-transform: uppercase;
     text-decoration: none;
+    font-weight: 700;
     transition: opacity 0.3s ease;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow:2px 1px 3px rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255, 0.8);
 }
 
 .nav-link:hover {
@@ -162,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     z-index: -1;
     opacity: .8;
-    background: url('wildgarden2.jpg');
+    background: url('wildgarden.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -228,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slider-btn {
-    background-color: #E45F74;
+    background-color: #CDB4DB;
     color: white;
     border: none;
     border-radius: 50%;
@@ -316,7 +305,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .lightbox-prev:hover,
 .lightbox-next:hover {
-    background-color: #E45F74;
+    background-color: #CDB4DB;
 }
 
 .lightbox-prev {
@@ -346,8 +335,8 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     z-index: -1;
-    opacity: .8;
-    background: url('wildgarden.jpg');
+    opacity: .9;
+    background: url('wildgarden2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -368,7 +357,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: #E45F74;
+    background-color: #CDB4DB;
     transform: translateX(-50%);
     z-index: 1;
 }
@@ -401,6 +390,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 65%;
     position: relative;
     z-index: 2;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .timeline-left .timeline-content {
@@ -443,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     width: 16px;
     height: 16px;
-    background-color: #E45F74;
+    background-color: #CDB4DB;
     border-radius: 50%;
     border: 3px solid var(--color-bg-alt);
     transform: translateX(-50%);
@@ -486,6 +476,8 @@ h1, h2, h3, h4, h5, h6 {
 .hero-ribbon {
     width: 100px;
     height: 100px;
+    filter: invert(1) brightness(1.2);
+    margin-bottom: var(--spacing-sm);
 }
 
 .hero-save-date {
@@ -551,7 +543,7 @@ h1, h2, h3, h4, h5, h6 {
     width: clamp(80px, 15vw, 120px);
     height: clamp(80px, 15vw, 120px);
     border-radius: 50%;
-    border: 3px solid #E45F74;
+    border: 3px solid #CDB4DB;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -563,14 +555,14 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Playball', cursive;
     font-size: clamp(1.5rem, 5vw, 2.5rem);
     font-weight: 400;
-    color: var(--color-text);
+    color: rgba(0, 0, 0, 0.6);
     text-align: center;
 }
 
 .countdown-label {
     font-family: 'Playball', cursive;
     font-size: clamp(1.5rem, 2vw, 1rem);
-    color: var(--color-text);
+    color: rgba(0, 0, 0, 0.6);
     text-align: center;
     margin-top: var(--spacing-xs);
 }
@@ -587,6 +579,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-title {
     font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
+    color: rgb(0, 0, 0, 0.6);
     /* margin-bottom: var(--spacing-md); */
 }
 
@@ -602,11 +595,11 @@ h1, h2, h3, h4, h5, h6 {
 .divider-line {
     flex: 1;
     height: 1px;
-    background-color: #000;
+    background-color: #CDB4DB;
 }
 
 .divider-icon {
-    color: #E45F74;
+    color: #CDB4DB;
     flex-shrink: 0;
     width: 24px;
     height: 24px;
@@ -665,7 +658,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Form Card */
 .form-card {
-    background: var(--color-bg-alt);
+    background: rgba(255, 255, 255, 0.8);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-lg);
@@ -698,6 +691,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     margin-bottom: var(--spacing-xs);
     color: var(--color-text);
+    font-family: 'Roboto', sans-serif;
     font-size: 1.125rem;
 }
 
@@ -716,7 +710,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.875rem;
     border: 2px solid var(--color-border);
     border-radius: var(--border-radius-sm);
-    font-family: 'Playball', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     transition: all 0.3s ease;
     background-color: white;
@@ -724,12 +718,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-input:focus {
     outline: none;
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(142, 111, 100, 0.1);
+    border-color: #CDB4DB;
+    box-shadow: 0 0 0 3px rgba(205, 180, 219, 0.2);
 }
 
 .form-input:hover {
-    border-color: var(--color-accent);
+    border-color: #CDB4DB;
 }
 
 /* Buttons */
@@ -749,7 +743,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background-color: #E45F74;
+    background-color: #CDB4DB;
     color: white;
     font-family: 'Roboto', sans-serif;
 }
@@ -1071,16 +1065,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 480px) {
     .main-header {
-        padding: var(--spacing-xs) var(--spacing-sm);
-    }
-    
-    .header-logo {
-        height: 35px;
-    }
-    
-    .header-nav {
-        gap: var(--spacing-xs);
-    }
+        display: none;
+    }    
     
     .nav-link {
         font-size: 0.875rem;
