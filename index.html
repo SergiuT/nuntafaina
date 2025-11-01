@@ -2,20 +2,19 @@
 <html lang="ro">
 
 <head>
-    <script src="https://use.fontawesome.com/428479cc59.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Confirmă prezența la Nunta Faină. Vezi programul, locația și detaliile utile.">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Nunta Faină – [Data & Ora]">
+    <meta property="og:title" content="Ramona & Sergiu">
     <meta property="og:description"
         content="Confirmă prezența la Nunta Faină. Vezi programul, locația și detaliile utile.">
     <meta property="og:image" content="/assets/og-image.svg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nuntafaina.ro">
 
-    <title>Nunta Faină – [Data & Ora]</title>
+    <title>Ramona & Sergiu</title>
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +32,7 @@
             <a href="#countdown" class="nav-link">Countdown</a>
             <a href="#detalii" class="nav-link">Detalii</a>
             <a href="#locatie" class="nav-link">Locatie</a>
+            <a href="#galerie" class="nav-link">Galerie</a>
             <a href="#prezenta" class="nav-link">Prezenta</a>
         </nav>
     </header>
@@ -202,7 +202,7 @@
     </section>
 
     <!-- Photo Gallery Section -->
-    <section class="photo-gallery-section">
+    <section class="photo-gallery-section" id="galerie">
         <div class="container">
             <h2 class="section-title">In caz ca vi se face dor de noi...</h2>
             <div class="section-divider">
@@ -311,13 +311,14 @@
                             </label>
                         </p>
 
+                        <!-- Name field must be first for Netlify submission title -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="lastName" class="form-label">
                                     Nume <span class="required">*</span>
                                 </label>
                                 <input type="text" id="lastName" name="lastName" class="form-input" required
-                                    aria-required="true">
+                                    aria-required="true" autocomplete="family-name">
                             </div>
 
                             <div class="form-group">
@@ -345,6 +346,16 @@
                                 <input type="number" id="people" name="people" class="form-input" min="1" value="1"
                                     required aria-required="true">
                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">
+                                Telefon
+                            </label>
+                            <input type="tel" id="phone" name="phone" class="form-input"
+                                pattern="^(0[2-7][0-9]{8}|07[0-9]{8}|\+40[0-9]{9}|0040[0-9]{9})$"
+                                title="Introduceți un număr de telefon valid (ex: 0712345678 sau 0212345678)"
+                                aria-label="Telefon (opțional)">
                         </div>
 
                         <div class="form-group">

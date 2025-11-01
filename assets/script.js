@@ -175,13 +175,63 @@ function initMobileSlider() {
     });
 }
 
-// Form Submission Handler
+// Form Submission Handler with Rate Limiting
 function initFormSubmission() {
     const form = document.getElementById('rsvp-form');
     if (!form) return;
     
+    // Rate limiting: prevent multiple submissions
+    const MIN_SUBMISSION_INTERVAL = 5000; // 5 seconds between submissions
+    const MAX_SUBMISSIONS_PER_SESSION = 3; // Max 3 submissions per session
+    let lastSubmissionTime = 0;
+    let submissionCount = 0;
+    
+    // Load submission count from sessionStorage
+    const storedCount = sessionStorage.getItem('formSubmissionCount');
+    if (storedCount) {
+        submissionCount = parseInt(storedCount, 10);
+    }
+    
+    // Disable submit button if max submissions reached
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submissionCount >= MAX_SUBMISSIONS_PER_SESSION && submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Limita de trimiteri a fost atinsă';
+        submitButton.style.opacity = '0.6';
+        submitButton.style.cursor = 'not-allowed';
+    }
+    
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+        
+        // Check if honeypot field is filled (spam check)
+        const botField = form.querySelector('[name="bot-field"]');
+        if (botField && botField.value.trim() !== '') {
+            // Bot detected - silently fail
+            console.warn('Spam detected: honeypot field filled');
+            return;
+        }
+        
+        // Rate limiting check
+        const now = Date.now();
+        const timeSinceLastSubmission = now - lastSubmissionTime;
+        
+        if (timeSinceLastSubmission < MIN_SUBMISSION_INTERVAL) {
+            const remainingTime = Math.ceil((MIN_SUBMISSION_INTERVAL - timeSinceLastSubmission) / 1000);
+            alert(`Te rugăm să aștepți ${remainingTime} secunde înainte de a trimite din nou.`);
+            return;
+        }
+        
+        if (submissionCount >= MAX_SUBMISSIONS_PER_SESSION) {
+            alert('Ați atins limita de trimiteri pentru această sesiune. Te rugăm să reîmprospătați pagina pentru a continua.');
+            return;
+        }
+        
+        // Disable submit button during submission
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Se trimite...';
+        }
         
         // Create FormData
         const formData = new FormData(form);
@@ -192,7 +242,16 @@ function initFormSubmission() {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
         })
-        .then(() => {
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            
+            // Update rate limiting
+            lastSubmissionTime = Date.now();
+            submissionCount++;
+            sessionStorage.setItem('formSubmissionCount', submissionCount.toString());
+            
             // Hide form and title, show success message
             document.getElementById('form-container').style.display = 'none';
             const title = document.querySelector('.form-card .section-title');
@@ -206,6 +265,13 @@ function initFormSubmission() {
         })
         .catch((error) => {
             console.error('Form submission error:', error);
+            
+            // Re-enable submit button on error
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Trimite confirmarea';
+            }
+            
             alert('A apărut o eroare. Te rugăm să încerci din nou.');
         });
     });
