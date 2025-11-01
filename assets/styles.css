@@ -670,6 +670,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-lg);
     max-width: 900px;
+    min-width: 650px;
     margin: var(--spacing-md) auto;
 }
 
@@ -777,6 +778,28 @@ h1, h2, h3, h4, h5, h6 {
 .success-message {
     text-align: center;
     padding: var(--spacing-md) 0;
+}
+
+.success-checkmark {
+    margin: var(--spacing-md) auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-checkmark svg {
+    animation: checkmarkFadeIn 0.5s ease-in-out;
+}
+
+@keyframes checkmarkFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .success-message .thank-you-title {
@@ -991,7 +1014,7 @@ h1, h2, h3, h4, h5, h6 {
     
     .timeline-left .timeline-dot,
     .timeline-right .timeline-dot {
-        left: -10px;
+        left: 20px;
         transform: translateX(-50%);
     }
     
@@ -1061,7 +1084,17 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .container {
-        padding: 0 var(--spacing-sm);
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .form-row {
+        gap: var(--spacing-xs);
+    }
+
+    .form-row .form-group {
+        margin-bottom: var(--spacing-xs);
     }
     
     .hero-banner {
@@ -1112,6 +1145,20 @@ h1, h2, h3, h4, h5, h6 {
 
     .photo-gallery-section {
         padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .section-divider {
+        width: 300px;
+        max-width: 300px;
+        margin: var(--spacing-md) auto;
+    }
+
+    .timeline {
+        padding: 0;
+    }
+
+    .map-full-width {
+        width: 100%;
     }
 }
 

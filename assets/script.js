@@ -193,8 +193,12 @@ function initFormSubmission() {
             body: new URLSearchParams(formData).toString()
         })
         .then(() => {
-            // Hide form, show success message
+            // Hide form and title, show success message
             document.getElementById('form-container').style.display = 'none';
+            const title = document.querySelector('.form-card .section-title');
+            if (title) {
+                title.style.display = 'none';
+            }
             document.getElementById('success-message').style.display = 'block';
             
             // Scroll to success message
