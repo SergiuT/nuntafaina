@@ -423,7 +423,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .timeline-title {
-    font-family: 'Playball', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     margin-bottom: var(--spacing-xs);
     color: var(--color-text);
@@ -431,8 +431,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .timeline-description {
-    font-family: 'Playball', cursive;
-    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
     color: var(--color-text-muted);
     text-align: center;
     line-height: 1.6;
@@ -587,7 +587,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-title {
     font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
-    margin-bottom: var(--spacing-md);
+    /* margin-bottom: var(--spacing-md); */
 }
 
 .section-divider {
@@ -751,6 +751,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary {
     background-color: #E45F74;
     color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
 .btn-primary:hover,
@@ -810,7 +811,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .success-message .thank-you-text {
-    font-family: 'Playball', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.125rem;
     color: var(--color-text);
     margin-bottom: var(--spacing-sm);
@@ -818,7 +819,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .success-message .thank-you-subtext {
-    font-family: 'Playball', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: var(--color-text-muted);
     line-height: 1.6;
@@ -853,11 +854,13 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.25rem;
     margin-bottom: var(--spacing-xs);
     color: var(--color-text);
+    font-family: 'Roboto', sans-serif;
 }
 
 .faq-answer {
     color: var(--color-text-muted);
     line-height: 1.7;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Thank You Page */
